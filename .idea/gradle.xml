@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="gradleHome" value="" />
+        <option name="modules">
+          <set>
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/modules/applications/event-processor" />
+            <option value="$PROJECT_DIR$/modules/applications/search-api" />
+            <option value="$PROJECT_DIR$/modules/applications/web-api" />
+            <option value="$PROJECT_DIR$/modules/common/constant" />
+            <option value="$PROJECT_DIR$/modules/common/exceptions" />
+            <option value="$PROJECT_DIR$/modules/common/logging" />
+            <option value="$PROJECT_DIR$/modules/common/monitoring" />
+            <option value="$PROJECT_DIR$/modules/controllers/crud-controller" />
+            <option value="$PROJECT_DIR$/modules/controllers/search-controller" />
+            <option value="$PROJECT_DIR$/modules/infra/queue" />
+            <option value="$PROJECT_DIR$/modules/infra/redis-queue" />
+            <option value="$PROJECT_DIR$/modules/infra/repository" />
+            <option value="$PROJECT_DIR$/modules/infra/repository-jpa" />
+            <option value="$PROJECT_DIR$/modules/model/model" />
+          </set>
+        </option>
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>
