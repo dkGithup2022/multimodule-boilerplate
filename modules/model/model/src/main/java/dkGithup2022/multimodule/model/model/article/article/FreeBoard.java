@@ -14,8 +14,9 @@ public class FreeBoard implements Article {
 
     private ArticleIdentity articleIdentity;
 
-    private Content content;
     private Title title;
+
+    private Content content;
 
     private Timestamps timestamps;
 
@@ -24,7 +25,7 @@ public class FreeBoard implements Article {
         return articleIdentity;
     }
 
-    public static FreeBoard of(ArticleIdentity articleIdentity, Content content, Title title, Timestamps timestamps) {
-        return new FreeBoard(articleIdentity, content, title, timestamps);
+    public static FreeBoard of(ArticleIdentity articleIdentity, Title title, Content content, Timestamps timestamps) {
+        return new FreeBoard(articleIdentity, title, content, timestamps);
     }
 }

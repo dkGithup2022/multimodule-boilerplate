@@ -18,8 +18,9 @@ public class DiscussionReply implements ChildArticle {
 
     private ArticleIdentity parentArticleIdentity;
 
-    private Content content;
     private Title title;
+    private Content content;
+
 
     private Timestamps timestamps;
 
@@ -32,7 +33,7 @@ public class DiscussionReply implements ChildArticle {
         return parentArticleIdentity;
     }
 
-    public static DiscussionReply of(ArticleIdentity articleIdentity, ArticleIdentity parentArticleIdentity, Content content, Title title, Timestamps timestamps) {
-        return new DiscussionReply(articleIdentity, parentArticleIdentity, content, title, timestamps);
+    public static DiscussionReply of(ArticleIdentity articleIdentity, ArticleIdentity parentArticleIdentity, Title title, Content content, Timestamps timestamps) {
+        return new DiscussionReply(articleIdentity, parentArticleIdentity, title, content, timestamps);
     }
 }

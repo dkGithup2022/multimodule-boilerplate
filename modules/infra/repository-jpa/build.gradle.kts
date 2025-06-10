@@ -7,6 +7,11 @@ java {
 }
 
 dependencies {
+    implementation(project(":repository"));
+    implementation(project(":model"));
+    implementation(project(":constant"))
+
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
 }
 

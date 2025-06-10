@@ -4,8 +4,10 @@ import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 import dkGithup2022.multimodule.model.model.article.structuredArticle.ChildArticle;
 import dkGithup2022.multimodule.model.model.article.structuredArticle.ParentArticle;
 
-public interface ChildArticleRepository <T extends ChildArticle, P extends ParentArticle>{
+import java.util.List;
+
+public interface ChildArticleRepository <T extends ChildArticle>{
     T save(T article);
     T findByIdentity(ArticleIdentity identity);
-    P findByParentIdentity(ArticleIdentity parentIdentity);
+    List<T> findByParentIdentity(ArticleIdentity parentIdentity);
 }

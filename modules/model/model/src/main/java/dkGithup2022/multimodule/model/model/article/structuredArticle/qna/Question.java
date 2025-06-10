@@ -17,17 +17,18 @@ public class Question implements ParentArticle {
     private ArticleIdentity articleIdentity;
 
 
-    private Content content;
     private Title title;
+    private Content content;
+
 
     private Timestamps timeStamps;
 
-    public ArticleIdentity getIdentity(){
+    public ArticleIdentity getIdentity() {
         return articleIdentity;
     }
 
-    public static Question of(ArticleIdentity articleIdentity, Content content, Title title, Timestamps timeStamps) {
-        return new Question(articleIdentity, content, title, timeStamps);
+    public static Question of(ArticleIdentity articleIdentity, Title title, Content content, Timestamps timeStamps) {
+        return new Question(articleIdentity, title, content, timeStamps);
     }
 
 

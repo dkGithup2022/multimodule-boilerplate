@@ -17,13 +17,13 @@ public class Answer implements ChildArticle {
     private ArticleIdentity articleIdentity;
 
     private ArticleIdentity parentArticleIdentity;
-
-    private Content content;
     private Title title;
+    private Content content;
+
 
     private Timestamps timeStamps;
 
-    public ArticleIdentity getIdentity(){
+    public ArticleIdentity getIdentity() {
         return articleIdentity;
     }
 
@@ -32,7 +32,7 @@ public class Answer implements ChildArticle {
         return parentArticleIdentity;
     }
 
-    public static Answer of(ArticleIdentity articleIdentity, ArticleIdentity parentArticleIdentity, Content content, Title title,Timestamps timeStamps) {
-        return new Answer(articleIdentity, parentArticleIdentity, content, title, timeStamps);
+    public static Answer of(ArticleIdentity articleIdentity, ArticleIdentity parentArticleIdentity, Title title, Content content, Timestamps timeStamps) {
+        return new Answer(articleIdentity, parentArticleIdentity, title, content, timeStamps);
     }
 }

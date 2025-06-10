@@ -13,9 +13,9 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Announcement implements Article {
     private ArticleIdentity articleIdentity;
-
-    private Content content;
     private Title title;
+    private Content content;
+
 
     private Timestamps timestamps;
 
@@ -24,7 +24,7 @@ public class Announcement implements Article {
         return articleIdentity;
     }
 
-    public static Announcement of(ArticleIdentity articleIdentity, Content content, Title title,Timestamps timestamps) {
-        return new Announcement(articleIdentity, content, title, timestamps);
+    public static Announcement of(ArticleIdentity articleIdentity, Title title, Content content, Timestamps timestamps) {
+        return new Announcement(articleIdentity, title, content, timestamps);
     }
 }
