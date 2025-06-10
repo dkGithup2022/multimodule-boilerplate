@@ -7,7 +7,7 @@ java {
 }
 
 dependencies {
-
+    implementation(project(":model"));
 }
 
 // bootJar 비활성화 (혹시라도 잘못 적용된 경우 대비)
