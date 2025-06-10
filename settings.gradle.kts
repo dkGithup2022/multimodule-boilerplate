@@ -5,6 +5,8 @@ include(":repository-jpa", ":repository", ":queue", ":redis-queue")
 include(":model")
 include(":constant", ":exceptions", ":logging", ":monitoring")
 include(":crud-controller", ":search-controller")
+include(":crud-service")
+
 
 project(":web-api").projectDir = file("modules/applications/web-api")
 project(":search-api").projectDir = file("modules/applications/search-api")
@@ -24,3 +26,5 @@ project(":monitoring").projectDir = file("modules/common/monitoring")
 
 project(":crud-controller").projectDir = file("modules/controllers/crud-controller")
 project(":search-controller").projectDir = file("modules/controllers/search-controller")
+
+project(":crud-service").projectDir = file("modules/service/crud-service")

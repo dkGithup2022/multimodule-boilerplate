@@ -23,6 +23,7 @@
             <option value="$PROJECT_DIR$/modules/infra/repository" />
             <option value="$PROJECT_DIR$/modules/infra/repository-jpa" />
             <option value="$PROJECT_DIR$/modules/model/model" />
+            <option value="$PROJECT_DIR$/modules/service/crud-service" />
           </set>
         </option>
       </GradleProjectSettings>
