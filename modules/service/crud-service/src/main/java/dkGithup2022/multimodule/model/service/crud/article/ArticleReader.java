@@ -5,5 +5,5 @@ import dkGithup2022.multimodule.model.model.article.ArticleBase;
 import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 
 public interface ArticleReader {
-    ArticleBase read(ArticleType articleType, ArticleIdentity articleIdentity);
+    <T extends ArticleBase> T read(ArticleType articleType, ArticleIdentity articleIdentity, Class<T> resultType);
 }

@@ -1,18 +1,19 @@
-package dkGithup2022.multimodule.model.service.crud.article.reader;
-
+package dkGithup2022.multimodule.model.service.crud.article.writer;
 
 import dkGithup2022.multimodule.infra.repository.article.article.FreeBoardRepository;
-import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 import dkGithup2022.multimodule.model.model.article.article.FreeBoard;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+
 @Component
 @RequiredArgsConstructor
-public class FreeBoardReader implements ArticleReaderBase<FreeBoard> {
+public class FreeBoardWriter implements ArticleWriterBase<FreeBoard> {
     private final FreeBoardRepository freeBoardRepository;
+    //private final ArticleEventWriter eventWriter;
 
-    public FreeBoard read(ArticleIdentity articleIdentity) {
-        return freeBoardRepository.findByIdentity(articleIdentity);
+    @Override
+    public FreeBoard write(FreeBoard article) {
+        return freeBoardRepository.save(article);
     }
 }

@@ -21,6 +21,8 @@ public class ChildArticleEntity extends BaseEntity {
 
     private Long parentId;
 
+    private Long authorId;
+
     @Enumerated(EnumType.STRING)
     private ArticleType articleType;
 
@@ -28,7 +30,7 @@ public class ChildArticleEntity extends BaseEntity {
 
     private String content;
 
-    public static ChildArticleEntity of(Long id, Long parentId, ArticleType articleType, String title, String content) {
-        return new ChildArticleEntity(id, parentId, articleType, title, content);
+    public static ChildArticleEntity of(Long id, Long parentId, Long authorId, ArticleType articleType, String title, String content) {
+        return new ChildArticleEntity(id, parentId, authorId, articleType, title, content);
     }
 }

@@ -10,6 +10,7 @@ import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
 import dkGithup2022.multimodule.model.model.article.article.Article;
 import dkGithup2022.multimodule.model.model.article.article.FreeBoard;
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -36,6 +37,7 @@ public class FreeBoardRepositoryImpl implements FreeBoardRepository {
     private ArticleEntity toEntity(FreeBoard freeBoard) {
         return ArticleEntity.of(
                 freeBoard.getArticleIdentity().id(),
+                freeBoard.getAuthorIdentity().id(),
                 ArticleType.FREE_BOARD,
                 freeBoard.getTitle().title(),
                 freeBoard.getContent().content()
@@ -45,6 +47,7 @@ public class FreeBoardRepositoryImpl implements FreeBoardRepository {
     private FreeBoard toDomain(ArticleEntity entity) {
         return FreeBoard.of(
                 new ArticleIdentity(entity.getId()),
+                new UserIdentity(entity.getAuthorId()),
                 new Title(entity.getTitle()),
                 new Content(entity.getContent()),
                 new Timestamps(

@@ -14,12 +14,14 @@ import lombok.NoArgsConstructor;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
-public class ParentArticleEntity  extends BaseEntity {
+public class ParentArticleEntity extends BaseEntity {
 
 
     @Id
     @GeneratedValue
     private Long id;
+
+    private Long authorId;
 
     @Enumerated(EnumType.STRING)
     private ArticleType articleType;
@@ -28,7 +30,7 @@ public class ParentArticleEntity  extends BaseEntity {
 
     private String content;
 
-    public static ParentArticleEntity of(Long id, ArticleType articleType, String title, String content) {
-        return new ParentArticleEntity(id, articleType, title, content);
+    public static ParentArticleEntity of(Long id, Long authorId, ArticleType articleType, String title, String content) {
+        return new ParentArticleEntity(id, authorId, articleType, title, content);
     }
 }

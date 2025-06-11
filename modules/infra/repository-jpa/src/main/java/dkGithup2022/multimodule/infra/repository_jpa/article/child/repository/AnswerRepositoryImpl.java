@@ -9,6 +9,7 @@ import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
 import dkGithup2022.multimodule.model.model.article.structuredArticle.qna.Answer;
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -43,6 +44,7 @@ public class AnswerRepositoryImpl implements AnswerRepository {
     private ChildArticleEntity toEntity( Answer answer ) {
         return ChildArticleEntity.of(
                 answer.getIdentity().id(), answer.getParentIdentity().id(),
+                answer.getAuthorIdentity().id(),
                 ArticleType.ANSWER,
                 answer.getTitle().title(),
                 answer.getContent().content()
@@ -53,6 +55,7 @@ public class AnswerRepositoryImpl implements AnswerRepository {
         return Answer.of(
                 new ArticleIdentity(entity.getId()),
                 new ArticleIdentity(entity.getParentId()),
+                new UserIdentity(entity.getAuthorId()),
                 new Title(entity.getTitle()),
                 new Content(entity.getContent()),
                 new Timestamps(

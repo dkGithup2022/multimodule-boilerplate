@@ -11,6 +11,7 @@ import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
 import dkGithup2022.multimodule.model.model.article.article.Announcement;
 import dkGithup2022.multimodule.model.model.article.structuredArticle.discussion.Discussion;
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +36,7 @@ public class DiscussionRepositoryImpl implements DiscussionRepository {
     private ParentArticleEntity toEntity(Discussion article) {
         return ParentArticleEntity.of(
                 article.getArticleIdentity().id(),
+                article.getAuthorIdentity().id(),
                 ArticleType.DISCUSSION,
                 article.getTitle().title(),
                 article.getContent().content()
@@ -44,6 +46,7 @@ public class DiscussionRepositoryImpl implements DiscussionRepository {
     private Discussion  toDomain(ParentArticleEntity entity) {
         return Discussion .of(
                 new ArticleIdentity(entity.getId()),
+                new UserIdentity(entity.getAuthorId()),
                 new Title(entity.getTitle()),
                 new Content(entity.getContent()),
                 new Timestamps(

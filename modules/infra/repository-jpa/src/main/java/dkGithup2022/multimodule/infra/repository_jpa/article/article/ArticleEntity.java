@@ -18,6 +18,8 @@ public class ArticleEntity extends BaseEntity {
     @GeneratedValue
     private Long id;
 
+    private Long authorId;
+
     @Enumerated(EnumType.STRING)
     private ArticleType articleType;
 
@@ -26,8 +28,8 @@ public class ArticleEntity extends BaseEntity {
     private String content;
 
 
-    public static ArticleEntity of(Long id, ArticleType articleType, String title, String content) {
-        return new ArticleEntity(id, articleType, title, content);
+    public static ArticleEntity of(Long id, Long authorId, ArticleType articleType, String title, String content) {
+        return new ArticleEntity(id, authorId, articleType, title, content);
     }
 
 }

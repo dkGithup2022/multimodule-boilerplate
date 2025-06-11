@@ -8,8 +8,9 @@ import dkGithup2022.multimodule.model.model.Timestamps;
 import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
-import dkGithup2022.multimodule.model.model.article.structuredArticle.discussion.Discussion;
+
 import dkGithup2022.multimodule.model.model.article.structuredArticle.qna.Question;
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -34,6 +35,7 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     private ParentArticleEntity toEntity(Question article) {
         return ParentArticleEntity.of(
                 article.getArticleIdentity().id(),
+                article.getAuthorIdentity().id(),
                 ArticleType.QUESTION,
                 article.getTitle().title(),
                 article.getContent().content()
@@ -43,6 +45,7 @@ public class QuestionRepositoryImpl implements QuestionRepository {
     private Question  toDomain(ParentArticleEntity entity) {
         return Question .of(
                 new ArticleIdentity(entity.getId()),
+                new UserIdentity(entity.getAuthorId()),
                 new Title(entity.getTitle()),
                 new Content(entity.getContent()),
                 new Timestamps(

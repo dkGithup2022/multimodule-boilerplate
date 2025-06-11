@@ -10,6 +10,7 @@ import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
 import dkGithup2022.multimodule.model.model.article.article.Announcement;
 
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -35,6 +36,7 @@ public class AnnounceRepositoryImpl implements AnnouncementRepository {
     private ArticleEntity toEntity(Announcement article) {
         return ArticleEntity.of(
                 article.getArticleIdentity().id(),
+                article.getAuthorIdentity().id(),
                 ArticleType.ANNOUNCEMENT,
                 article.getTitle().title(),
                 article.getContent().content()
@@ -44,6 +46,7 @@ public class AnnounceRepositoryImpl implements AnnouncementRepository {
     private Announcement  toDomain(ArticleEntity entity) {
         return Announcement .of(
                 new ArticleIdentity(entity.getId()),
+                new UserIdentity(entity.getAuthorId()),
                 new Title(entity.getTitle()),
                 new Content(entity.getContent()),
                 new Timestamps(

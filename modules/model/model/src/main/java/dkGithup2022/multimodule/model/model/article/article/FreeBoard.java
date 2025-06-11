@@ -4,6 +4,7 @@ import dkGithup2022.multimodule.model.model.Timestamps;
 import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,7 +14,7 @@ import lombok.Getter;
 public class FreeBoard implements Article {
 
     private ArticleIdentity articleIdentity;
-
+    private UserIdentity authorIdentity;
     private Title title;
 
     private Content content;
@@ -25,7 +26,7 @@ public class FreeBoard implements Article {
         return articleIdentity;
     }
 
-    public static FreeBoard of(ArticleIdentity articleIdentity, Title title, Content content, Timestamps timestamps) {
-        return new FreeBoard(articleIdentity, title, content, timestamps);
+    public static FreeBoard of(ArticleIdentity articleIdentity, UserIdentity authorIdentity, Title title, Content content, Timestamps timestamps) {
+        return new FreeBoard(articleIdentity, authorIdentity, title, content, timestamps);
     }
 }

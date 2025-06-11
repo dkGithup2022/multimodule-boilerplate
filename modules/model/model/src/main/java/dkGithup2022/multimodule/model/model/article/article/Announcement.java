@@ -4,6 +4,7 @@ import dkGithup2022.multimodule.model.model.Timestamps;
 import dkGithup2022.multimodule.model.model.article.ArticleIdentity;
 import dkGithup2022.multimodule.model.model.article.Content;
 import dkGithup2022.multimodule.model.model.article.Title;
+import dkGithup2022.multimodule.model.model.user.UserIdentity;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,6 +14,7 @@ import lombok.Getter;
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Announcement implements Article {
     private ArticleIdentity articleIdentity;
+    private UserIdentity authorIdentity;
     private Title title;
     private Content content;
 
@@ -24,7 +26,7 @@ public class Announcement implements Article {
         return articleIdentity;
     }
 
-    public static Announcement of(ArticleIdentity articleIdentity, Title title, Content content, Timestamps timestamps) {
-        return new Announcement(articleIdentity, title, content, timestamps);
+    public static Announcement of(ArticleIdentity articleIdentity, UserIdentity authorIdentity, Title title, Content content, Timestamps timestamps) {
+        return new Announcement(articleIdentity, authorIdentity, title, content, timestamps);
     }
 }
